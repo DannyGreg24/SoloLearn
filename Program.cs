@@ -313,9 +313,6 @@ namespace SoloLearn
             Console.WriteLine("You have " + eyeNosInwords + " number of eyes");
         }
 
-        private static int GetInputNumberGrade(int inputNumberGrade)
-        {
-            return inputNumberGrade;
-        }
+        
     }
 }
