@@ -8,9 +8,9 @@ namespace SoloLearn
 {
     class Program
     {
-        Random scoreNumberGenerator = new Random();
+        //Random scoreNumberGenerator = new Random();
 
-       public static void Main(string[] args)
+        static void Main(string[] args)
         {
             int x = 89;
             Console.WriteLine(x);
@@ -246,7 +246,7 @@ namespace SoloLearn
             string userInputScore = "Input Score";
             string userGenerateScore = "Generate Score";
             string inputOrGenerateScore;
-            int scoreGenerator = scoreNumberGenerator.Next(0,101);
+            // int scoreGenerator = scoreNumberGenerator.Next(0,101);
 
             studentA = 95;
             studentB = 84;
@@ -307,7 +307,7 @@ namespace SoloLearn
                 }
             }
 
-            else if (inputOrGenerateScore == userGenerateScore) {
+            /*else if (inputOrGenerateScore == userGenerateScore) {
                 Console.WriteLine("Let's generate a score by pressing \"Enter\"");
                 string keyEnter = Console.ReadLine();
 
@@ -357,9 +357,42 @@ namespace SoloLearn
                     
                     Console.WriteLine("Wrong input");
                 }
+            } */
+
+            Console.WriteLine("---------------Testing Switch Statements---------------------");
+
+            switch(inputNumberGrade) {
+
+                case maxGrade:
+                    Console.WriteLine("Perferct");
+                    break;
+
+                case inputNumberGrade <= 99 && inputNumberGrade >= 80:
+                    Console.WriteLine($"You got an {goodGrade}");
+                    break;
+
+                case inputNumberGrade <= 79 && inputNumberGrade >= 70:
+                    Console.WriteLine($"You got a {okGrade}");
+                    break;
+                    
+                case inputNumberGrade <= 69 && inputNumberGrade >= 60:
+                    Console.WriteLine($"You got a {fairGrade}");
+                    break;
+
+                case inputNumberGrade <= 59 && inputNumberGrade >= 50:
+                    Console.WriteLine("Poor performance, you got a {0}", passGrade);
+                    break;
+
+                case inputNumberGrade <= 49:
+                    Console.WriteLine($"You fail, you got an {failGrade}");
+                    break;
+
+                default :
+                    Console.WriteLine("Finished");
+                    break;
             }
 
-            
+            Console.WriteLine("---------------End Of Switch Statement Test---------------------");
 
             Console.WriteLine("--------------Breakpoint-----------------");
             string academicExellence = "These students are recognized for thier academic excellence";
