@@ -8,7 +8,9 @@ namespace SoloLearn
 {
     class Program
     {
-        static void Main(string[] args)
+        Random scoreNumberGenerator = new Random();
+
+       public static void Main(string[] args)
         {
             int x = 89;
             Console.WriteLine(x);
@@ -222,7 +224,7 @@ namespace SoloLearn
                 Console.WriteLine("box seems to have converted to a different variable type");
             }
 
-            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("-------------------Breakpoint----------------------------");
 
             string goodGrade = "A";
             string okGrade = "B";
@@ -237,59 +239,138 @@ namespace SoloLearn
             int studentA, studentB, studentC, studentD, studentE;
             int averageNumberGrade;
             string averageLetterGrade;
+            int recognitionThreshold;
+            bool userInS = false; // bool for user input
+            bool userGenS = false; // bool for user generate
+            string choice;
+            string userInputScore = "Input Score";
+            string userGenerateScore = "Generate Score";
+            string inputOrGenerateScore;
+            int scoreGenerator = scoreNumberGenerator.Next(0,101);
+
             studentA = 95;
             studentB = 84;
             studentC = 36;
             studentD = 72;
             studentE = 51;
             
-            Console.Write("Insert Number Grade: ");
-            inputNumberGrade = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Do you wish to input your score or generate a random one?");
+            inputOrGenerateScore = Console.ReadLine();
 
-            if (inputNumberGrade == maxGrade) {
-                Console.WriteLine("perfect you got an {0}", perfectGrade);
+            if (inputOrGenerateScore == userInputScore){
 
-                if (inputNumberGrade <= 99 || inputNumberGrade >= 80)
-                {
-                    Console.WriteLine($"You got an {goodGrade}");
+                userInS = true;
 
-                    if (inputNumberGrade <= 79 || inputNumberGrade >= 70)
+                if (userInS == true){
+
+                   Console.Write("Insert Number Grade: ");
+                   inputNumberGrade = Convert.ToInt32(Console.ReadLine());
+
+                   if (inputNumberGrade == maxGrade)
+                   {
+                       Console.WriteLine("perfect you got an {0}", perfectGrade);
+                   }
+
+                   else if (inputNumberGrade <= 99 && inputNumberGrade >= 80)
                     {
-                        Console.WriteLine($"You got a {okGrade}");
-
-                        if (inputNumberGrade <= 69 || inputNumberGrade >= 60)
-                        {
-                            Console.WriteLine($"You got a {fairGrade}");
-
-                            if (inputNumberGrade <= 59 || inputNumberGrade >= 50)
-                            {
-                                Console.WriteLine("Poor performance, you got a {0}", passGrade);
-
-                                if (inputNumberGrade >= 40 || inputNumberGrade <= 49)
-                                {
-                                    Console.WriteLine($"You fail, you got an {failGrade}");
-                                }
-
-                                else if (inputNumberGrade < 40 && inputNumberGrade != 0)
-                                {
-                                    Console.WriteLine($"You fail, you got an {failGrade}");
-                                }
-
-                                if ((inputNumberGrade != 0) == (inputNumberGrade == maxGrade))
-                                {
-                                    //Re-enter score to reflect whether or not the end-result is a positive or negative letter grade
-                                    Console.Write("Re-enter Score: ");
-                                    GetInputNumberGrade(inputNumberGrade);
-
-                                    
-                                }
-                            }
-                        }
+                           Console.WriteLine($"You got an {goodGrade}");                    
                     }
-                }
 
+            
+                   else if (inputNumberGrade <= 79 && inputNumberGrade >= 70)
+                   {
+                       Console.WriteLine($"You got a {okGrade}");
+                   }
+
+                   else if (inputNumberGrade <= 69 && inputNumberGrade >= 60)
+                   {
+                       Console.WriteLine($"You got a {fairGrade}");
+                   }
+
+                   else if (inputNumberGrade <= 59 && inputNumberGrade >= 50)
+                   {
+                       Console.WriteLine("Poor performance, you got a {0}", passGrade);
+                   }
+
+                   if (inputNumberGrade <= 49)
+                   {
+                       Console.WriteLine($"You fail, you got an {failGrade}");
+                   }
+
+                   //else if (inputNumberGrade < 40 && inputNumberGrade != 0)
+                   //{
+                   //    Console.WriteLine($"You fail, you got an {failGrade}");
+                   //}
+
+                   Console.ReadKey();
+                    
+                }
             }
 
+            else if (inputOrGenerateScore == userGenerateScore) {
+                Console.WriteLine("Let's generate a score by pressing \"Enter\"");
+                string keyEnter = Console.ReadLine();
+
+                if (keyEnter == "Enter"){
+                    scoreGenerator = Convert.ToInt32(Console.ReadLine());
+
+                   if (scoreGenerator == maxGrade)
+                   {
+                       Console.WriteLine("perfect you got an {0}", perfectGrade);
+                   }
+
+                   else if (scoreGenerator <= 99 && scoreGenerator >= 80)
+                    {
+                           Console.WriteLine($"You got an {goodGrade}");                    
+                    }
+
+            
+                   else if (scoreGenerator <= 79 && scoreGenerator >= 70)
+                   {
+                       Console.WriteLine($"You got a {okGrade}");
+                   }
+
+                   else if (scoreGenerator <= 69 && scoreGenerator >= 60)
+                   {
+                       Console.WriteLine($"You got a {fairGrade}");
+                   }
+
+                   else if (scoreGenerator <= 59 && scoreGenerator >= 50)
+                   {
+                       Console.WriteLine("Poor performance, you got a {0}", passGrade);
+                   }
+
+                   if (scoreGenerator <= 49)
+                   {
+                       Console.WriteLine($"You fail, you got an {failGrade}");
+                   }
+
+                   //else if (inputNumberGrade < 40 && inputNumberGrade != 0)
+                   //{
+                   //    Console.WriteLine($"You fail, you got an {failGrade}");
+                   //}
+
+                   Console.ReadKey();
+                }
+
+                else{
+                    
+                    Console.WriteLine("Wrong input");
+                }
+            }
+
+            
+
+            Console.WriteLine("--------------Breakpoint-----------------");
+            string academicExellence = "These students are recognized for thier academic excellence";
+
+            if (studentA == 90 && studentB == 90 && studentC == 90 && studentD == 90 && studentE == 90)
+            {
+                Console.WriteLine(academicExellence);
+            }
+
+
+            Console.WriteLine("-----------------------------------------------");
 
 
             Console.WriteLine("-----------------------------------------------");
@@ -311,11 +392,6 @@ namespace SoloLearn
             Console.WriteLine("You have " + nosOfSkills + " number of skills");
             Console.WriteLine("You have " + nosOfFingers + " fingers");
             Console.WriteLine("You have " + eyeNosInwords + " number of eyes");
-        }
-
-        private static int GetInputNumberGrade(int inputNumberGrade)
-        {
-            return inputNumberGrade;
         }
     }
 }
