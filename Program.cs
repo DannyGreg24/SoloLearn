@@ -102,8 +102,8 @@ namespace SoloLearn
             decimal io = 5.1m;
             io /= 2;
             Console.WriteLine("IO result = {0}", t);
-            Console.WriteLine("Modulus of IO with respect to t = {0}", io%=yu);
-            Console.WriteLine("Modulus of IO = {0}", io%=2);
+            Console.WriteLine("Modulus of IO with respect to t = {0}", io %= yu);
+            Console.WriteLine("Modulus of IO = {0}", io %= 2);
             decimal.ToDouble(io);// Converts decimal to double because a decimal can not be converted to a string
             Convert.ToString(io);
             Console.WriteLine("Conveting decimal to string [for IO] = {0}", io);
@@ -136,7 +136,7 @@ namespace SoloLearn
             Console.WriteLine(f++);
             Console.WriteLine(++f);
 
-            g= --g;
+            g = --g;
             Console.WriteLine(g);
             Console.WriteLine(g--);
             Console.WriteLine(--g);
@@ -145,14 +145,14 @@ namespace SoloLearn
 
             int r = 10;
             int j = ++r;
-            Console.WriteLine("Prefix result {0}",j);
+            Console.WriteLine("Prefix result {0}", j);
 
             int v = 10;
             int ty = v++;
-            Console.WriteLine("Postfix Result {0}",ty);
-            
-            
-            
+            Console.WriteLine("Postfix Result {0}", ty);
+
+
+
             Console.WriteLine("-----------------------------------------------");
 
             // If-Else Statements
@@ -168,7 +168,7 @@ namespace SoloLearn
             input = Convert.ToInt32(Console.ReadLine());
             ageUser = input;
 
-            
+
             if (ageUser < permittedAge)
             {
                 Console.WriteLine("Sorry you are not permitted to enter this site!");
@@ -182,7 +182,7 @@ namespace SoloLearn
             if (re > ur)
             {
                 Console.WriteLine("You're Weird");
-                
+
             }
 
             if (j != ty)
@@ -195,19 +195,19 @@ namespace SoloLearn
                 Console.WriteLine(box);
             }
 
-            if(g >= f)
+            if (g >= f)
             {
                 Console.WriteLine(t);
             }
-            
+
             if (box.GetType() == box2.GetType())
             {
                 Convert.ToInt32(box);
                 Console.WriteLine("This is readable because the if statement compared variables of different types {0}", box);
-                
+
             }
 
-            
+
             box.GetType();
 
             if (box.GetType() != box2.GetType())
@@ -216,7 +216,7 @@ namespace SoloLearn
                 Convert.ToInt32(box);
                 var newBox = box;
                 Console.WriteLine(newBox.GetType());
-                
+
 
             }
             else
@@ -233,9 +233,9 @@ namespace SoloLearn
             string failGrade = "F";
             string perfectGrade = "A+";
             int minGrade = 0;
-            int maxGrade = 100;
+            const int maxGrade = 100;
             string inputLetterGrade;
-            int inputNumberGrade;
+            int inputNumberGrade = 65;
             int studentA, studentB, studentC, studentD, studentE;
             int averageNumberGrade;
             string averageLetterGrade;
@@ -253,57 +253,59 @@ namespace SoloLearn
             studentC = 36;
             studentD = 72;
             studentE = 51;
-            
+
             Console.Write("Do you wish to input your score or generate a random one?");
             inputOrGenerateScore = Console.ReadLine();
 
-            if (inputOrGenerateScore == userInputScore){
+            if (inputOrGenerateScore == userInputScore)
+            {
 
                 userInS = true;
 
-                if (userInS == true){
+                if (userInS == true)
+                {
 
-                   Console.Write("Insert Number Grade: ");
-                   inputNumberGrade = Convert.ToInt32(Console.ReadLine());
+                    Console.Write("Insert Number Grade: ");
+                    inputNumberGrade = Convert.ToInt32(Console.ReadLine());
 
-                   if (inputNumberGrade == maxGrade)
-                   {
-                       Console.WriteLine("perfect you got an {0}", perfectGrade);
-                   }
-
-                   else if (inputNumberGrade <= 99 && inputNumberGrade >= 80)
+                    if (inputNumberGrade == maxGrade)
                     {
-                           Console.WriteLine($"You got an {goodGrade}");                    
+                        Console.WriteLine("perfect you got an {0}", perfectGrade);
                     }
 
-            
-                   else if (inputNumberGrade <= 79 && inputNumberGrade >= 70)
-                   {
-                       Console.WriteLine($"You got a {okGrade}");
-                   }
+                    else if (inputNumberGrade <= 99 && inputNumberGrade >= 80)
+                    {
+                        Console.WriteLine($"You got an {goodGrade}");
+                    }
 
-                   else if (inputNumberGrade <= 69 && inputNumberGrade >= 60)
-                   {
-                       Console.WriteLine($"You got a {fairGrade}");
-                   }
 
-                   else if (inputNumberGrade <= 59 && inputNumberGrade >= 50)
-                   {
-                       Console.WriteLine("Poor performance, you got a {0}", passGrade);
-                   }
+                    else if (inputNumberGrade <= 79 && inputNumberGrade >= 70)
+                    {
+                        Console.WriteLine($"You got a {okGrade}");
+                    }
 
-                   if (inputNumberGrade <= 49)
-                   {
-                       Console.WriteLine($"You fail, you got an {failGrade}");
-                   }
+                    else if (inputNumberGrade <= 69 && inputNumberGrade >= 60)
+                    {
+                        Console.WriteLine($"You got a {fairGrade}");
+                    }
 
-                   //else if (inputNumberGrade < 40 && inputNumberGrade != 0)
-                   //{
-                   //    Console.WriteLine($"You fail, you got an {failGrade}");
-                   //}
+                    else if (inputNumberGrade <= 59 && inputNumberGrade >= 50)
+                    {
+                        Console.WriteLine("Poor performance, you got a {0}", passGrade);
+                    }
 
-                   Console.ReadKey();
-                    
+                    if (inputNumberGrade <= 49)
+                    {
+                        Console.WriteLine($"You fail, you got an {failGrade}");
+                    }
+
+                    //else if (inputNumberGrade < 40 && inputNumberGrade != 0)
+                    //{
+                    //    Console.WriteLine($"You fail, you got an {failGrade}");
+                    //}
+
+                    Console.ReadKey();
+
                 }
             }
 
@@ -361,33 +363,32 @@ namespace SoloLearn
 
             Console.WriteLine("---------------Testing Switch Statements---------------------");
 
-            switch(inputNumberGrade) {
+            switch (inputNumberGrade)
+            {
 
                 case maxGrade:
                     Console.WriteLine("Perferct");
                     break;
 
-                case inputNumberGrade <= 99 && inputNumberGrade >= 80:
-                    Console.WriteLine($"You got an {goodGrade}");
+                case 50:
+                    Console.WriteLine("Meh");
                     break;
 
-                case inputNumberGrade <= 79 && inputNumberGrade >= 70:
-                    Console.WriteLine($"You got a {okGrade}");
-                    break;
-                    
-                case inputNumberGrade <= 69 && inputNumberGrade >= 60:
-                    Console.WriteLine($"You got a {fairGrade}");
+                case 65:
+                    Console.WriteLine("Finally, Switch Statement Worked");
                     break;
 
-                case inputNumberGrade <= 59 && inputNumberGrade >= 50:
-                    Console.WriteLine("Poor performance, you got a {0}", passGrade);
+
+                // Similarly Switches can be written like this
+
+                case 44:
+                case 20:
+                case 55:
+                case 88:
+                    Console.WriteLine("Multiple Cases On A Single Line Works As Well");
                     break;
 
-                case inputNumberGrade <= 49:
-                    Console.WriteLine($"You fail, you got an {failGrade}");
-                    break;
-
-                default :
+                default:
                     Console.WriteLine("Finished");
                     break;
             }
@@ -407,7 +408,7 @@ namespace SoloLearn
 
 
             Console.WriteLine("-----------------------------------------------");
-            
+
             Console.WriteLine(numTest1);
 
             Console.WriteLine("-----------------------------------------------");
@@ -425,6 +426,174 @@ namespace SoloLearn
             Console.WriteLine("You have " + nosOfSkills + " number of skills");
             Console.WriteLine("You have " + nosOfFingers + " fingers");
             Console.WriteLine("You have " + eyeNosInwords + " number of eyes");
+
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("--------------------Testing Simple Game While Loops----------------------");
+
+            string robber = "Put the money in the bag";
+            string victimOption1 = "I have a family";
+            bool trigger1 = false;
+            bool trigger2 = false;
+            bool triggerEndAll = false;
+            string playerSelectA = "A";
+            string playerSelectB = "B";
+            string victimOption2 = "Refuse";
+            string victimOption3 = "Ok Ok. How many?";
+            string robberDeathResponse = "Robber shoots you";
+            string robberResponse = "All of it you Bastard";
+            int creditCard = 20;
+            int atm;
+            int cash;
+            string robberCar = "The robber gets away in his car";
+            string playerInput = " ";
+            
+
+            while (trigger1 is false || playerInput == playerSelectB )
+            {
+                for (int Counter = 0; Counter < 1; Counter++)
+                {
+
+                    Console.WriteLine("A robber is ordering you to put you money in the bag. How do you respond?---Click Twice To See Option");
+                    Console.WriteLine("A: Comply");
+                    Console.WriteLine("B: Refuse");
+                    Console.WriteLine(robber);
+                    playerInput = Console.ReadLine();
+
+                    if (playerInput == playerSelectB)
+                    {
+                        Console.WriteLine("You chose: {0}", victimOption2);
+                        Console.WriteLine(robberDeathResponse);
+                        Console.WriteLine("THE END");
+                        triggerEndAll = true;
+
+                        if (triggerEndAll is true)
+                        {
+                            break;
+                        }
+                    }
+
+                    else if (playerInput != playerSelectB && playerInput != playerSelectA)
+                    {
+                        Console.WriteLine("Pick Either Option A or B Not Any Other Key");
+                        playerInput = Console.ReadLine();
+
+                    }
+                    else if (playerInput == playerSelectA)
+                    {
+                        Console.WriteLine(victimOption1);
+                        Console.WriteLine(victimOption3);
+                        Console.WriteLine(robberResponse);
+                        trigger2 = true;
+
+
+                        if (trigger2 = true)
+                        {
+                            Console.WriteLine("You insert your card into the atm to withdraw your money");
+                            atm = creditCard;
+                            --creditCard;
+
+                            if (creditCard == 0)
+                            {
+                                Console.WriteLine("Your card balance is now $0");
+                            }
+
+                            cash = atm;
+
+
+                            if (cash == atm)
+                            {
+                                Console.WriteLine("You have withdrawn all of your money from the ATM and given it to the robber");
+                                Console.WriteLine(robberCar);
+                            }
+                            else
+                            {
+
+                                Console.WriteLine($"The money has was not able to withdraw from the atm. Let's see the amount that is available in the atm: {atm}");
+                                while (atm < creditCard)
+                                {
+                                    ++atm;
+                                    Console.WriteLine("You re-tried and put in your total amount of {0} from your credit card to the atm which is {1}", creditCard, atm);
+                                }
+
+                            }
+
+
+                            break;
+
+                        }
+                    }
+
+                }
+
+
+            }
+
+
+            
+
+            Console.WriteLine("--------------------Testing While Loops----------------------");
+
+            //int conTest = 10;
+            //while (conTest < 21)
+            //{
+            //    Console.WriteLine(conTest);
+            //    conTest++;
+            //}
+
+            Console.WriteLine("Another While loop incremental test");
+
+            int value1 = 1;
+            int value2 = 12;
+            int value3 = 5;
+            int value4 = 3;
+
+            Console.WriteLine("-----------------------------------------------");
+            while (value1++ < value3)
+            {
+                if (value1 % 2 == 0)
+                {
+                    Console.WriteLine($"Postfix: While Loop Result Of V1 & V3 = {value1}");
+                    value1 += 2;
+                    Console.WriteLine($"Result After Postfix Increment = {value1}");
+
+                }
+
+
+
+            }
+
+            Console.WriteLine("-----------------------------------------------");
+
+            //while (value2 > value4++)
+            //{
+            //    Console.WriteLine("While Loop Result Of V3 & V4 = {0}", value4);
+
+            //}
+
+            Console.WriteLine("-----------------------------------------------");
+
+            //if (value1 < value2)
+            //{
+            //    Console.WriteLine($"Incrementing V1 = {value1}");
+            //    value1++;
+            //    Console.WriteLine($"If-Condition for V1 & V2 = {value1}");
+
+            //    while (value4 < value1++)
+            //    {
+            //        Console.WriteLine($"While Loop For V4 & V1++ = {value4}");
+            //        value2 -= 2;
+            //        Console.WriteLine($"Decrementing V2 by 2 = {value2}");
+            //    }
+            //}
+
+
+
+            Console.WriteLine("-----------------------------------------------");
+
+
+
+
         }
     }
 }
+
