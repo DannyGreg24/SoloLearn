@@ -434,7 +434,6 @@ namespace SoloLearn
             string victimOption1 = "I have a family";
             bool trigger1 = false;
             bool trigger2 = false;
-            bool triggerEndAll = false;
             string playerSelectA = "A";
             string playerSelectB = "B";
             string victimOption2 = "Refuse";
@@ -446,11 +445,10 @@ namespace SoloLearn
             int cash;
             string robberCar = "The robber gets away in his car";
             string playerInput = " ";
-            
 
-            while (trigger1 is false || playerInput == playerSelectB )
+            for (int Counter = 0; Counter < 1; Counter++)
             {
-                for (int Counter = 0; Counter < 1; Counter++)
+                while (trigger1 is false || playerInput == playerSelectB)
                 {
 
                     Console.WriteLine("A robber is ordering you to put you money in the bag. How do you respond?---Click Twice To See Option");
@@ -464,12 +462,6 @@ namespace SoloLearn
                         Console.WriteLine("You chose: {0}", victimOption2);
                         Console.WriteLine(robberDeathResponse);
                         Console.WriteLine("THE END");
-                        triggerEndAll = true;
-
-                        if (triggerEndAll is true)
-                        {
-                            break;
-                        }
                     }
 
                     else if (playerInput != playerSelectB && playerInput != playerSelectA)
@@ -518,7 +510,7 @@ namespace SoloLearn
                             }
 
 
-                            break;
+
 
                         }
                     }
