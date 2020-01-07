@@ -446,79 +446,79 @@ namespace SoloLearn
             string robberCar = "The robber gets away in his car";
             string playerInput = " ";
 
-            for (int Counter = 0; Counter < 1; Counter++)
-            {
-                while (trigger1 is false || playerInput == playerSelectB)
-                {
+            //for (int Counter = 0; Counter < 1; Counter++)
+            //{
+            //    while (trigger1 is false || playerInput == playerSelectB)
+            //    {
 
-                    Console.WriteLine("A robber is ordering you to put you money in the bag. How do you respond?---Click Twice To See Option");
-                    Console.WriteLine("A: Comply");
-                    Console.WriteLine("B: Refuse");
-                    Console.WriteLine(robber);
-                    playerInput = Console.ReadLine();
+            //        Console.WriteLine("A robber is ordering you to put you money in the bag. How do you respond?---Click Twice To See Option");
+            //        Console.WriteLine("A: Comply");
+            //        Console.WriteLine("B: Refuse");
+            //        Console.WriteLine(robber);
+            //        playerInput = Console.ReadLine();
 
-                    if (playerInput == playerSelectB)
-                    {
-                        Console.WriteLine("You chose: {0}", victimOption2);
-                        Console.WriteLine(robberDeathResponse);
-                        Console.WriteLine("THE END");
-                    }
+            //        if (playerInput == playerSelectB)
+            //        {
+            //            Console.WriteLine("You chose: {0}", victimOption2);
+            //            Console.WriteLine(robberDeathResponse);
+            //            Console.WriteLine("THE END");
+            //        }
 
-                    else if (playerInput != playerSelectB && playerInput != playerSelectA)
-                    {
-                        Console.WriteLine("Pick Either Option A or B Not Any Other Key");
-                        playerInput = Console.ReadLine();
+            //        else if (playerInput != playerSelectB && playerInput != playerSelectA)
+            //        {
+            //            Console.WriteLine("Pick Either Option A or B Not Any Other Key");
+            //            playerInput = Console.ReadLine();
 
-                    }
-                    else if (playerInput == playerSelectA)
-                    {
-                        Console.WriteLine(victimOption1);
-                        Console.WriteLine(victimOption3);
-                        Console.WriteLine(robberResponse);
-                        trigger2 = true;
-
-
-                        if (trigger2 = true)
-                        {
-                            Console.WriteLine("You insert your card into the atm to withdraw your money");
-                            atm = creditCard;
-                            --creditCard;
-
-                            if (creditCard == 0)
-                            {
-                                Console.WriteLine("Your card balance is now $0");
-                            }
-
-                            cash = atm;
+            //        }
+            //        else if (playerInput == playerSelectA)
+            //        {
+            //            Console.WriteLine(victimOption1);
+            //            Console.WriteLine(victimOption3);
+            //            Console.WriteLine(robberResponse);
+            //            trigger2 = true;
 
 
-                            if (cash == atm)
-                            {
-                                Console.WriteLine("You have withdrawn all of your money from the ATM and given it to the robber");
-                                Console.WriteLine(robberCar);
-                            }
-                            else
-                            {
+            //            if (trigger2 = true)
+            //            {
+            //                Console.WriteLine("You insert your card into the atm to withdraw your money");
+            //                atm = creditCard;
+            //                --creditCard;
 
-                                Console.WriteLine($"The money has was not able to withdraw from the atm. Let's see the amount that is available in the atm: {atm}");
-                                while (atm < creditCard)
-                                {
-                                    ++atm;
-                                    Console.WriteLine("You re-tried and put in your total amount of {0} from your credit card to the atm which is {1}", creditCard, atm);
-                                }
+            //                if (creditCard == 0)
+            //                {
+            //                    Console.WriteLine("Your card balance is now $0");
+            //                }
 
-                            }
+            //                cash = atm;
 
 
+            //                if (cash == atm)
+            //                {
+            //                    Console.WriteLine("You have withdrawn all of your money from the ATM and given it to the robber");
+            //                    Console.WriteLine(robberCar);
+            //                }
+            //                else
+            //                {
+
+            //                    Console.WriteLine($"The money has was not able to withdraw from the atm. Let's see the amount that is available in the atm: {atm}");
+            //                    while (atm < creditCard)
+            //                    {
+            //                        ++atm;
+            //                        Console.WriteLine("You re-tried and put in your total amount of {0} from your credit card to the atm which is {1}", creditCard, atm);
+            //                    }
+
+            //                }
 
 
-                        }
-                    }
-
-                }
 
 
-            }
+            //            }
+            //        }
+
+            //    }
+
+
+            //}
 
 
             
@@ -538,21 +538,22 @@ namespace SoloLearn
             int value2 = 12;
             int value3 = 5;
             int value4 = 3;
+            int baseNum = -5;
 
             Console.WriteLine("-----------------------------------------------");
-            while (value1++ < value3)
-            {
-                if (value1 % 2 == 0)
-                {
-                    Console.WriteLine($"Postfix: While Loop Result Of V1 & V3 = {value1}");
-                    value1 += 2;
-                    Console.WriteLine($"Result After Postfix Increment = {value1}");
+            //while (value1++ < value3)
+            //{
+            //    if (value1 % 2 == 0)
+            //    {
+            //        Console.WriteLine($"Postfix: While Loop Result Of V1 & V3 = {value1}");
+            //        value1 += 2;
+            //        Console.WriteLine($"Result After Postfix Increment = {value1}");
 
-                }
+            //    }
 
 
 
-            }
+            //}
 
             Console.WriteLine("-----------------------------------------------");
 
@@ -578,6 +579,35 @@ namespace SoloLearn
             //    }
             //}
 
+
+
+            Console.WriteLine("-----------------------For Loop Test------------------------");
+
+            for(int cnt = 0; cnt < 5; cnt++)
+            {
+                while(value3 < 7)
+                {
+                    value3++;
+                    Console.WriteLine($"Incremeting V3: {value3}");
+
+                    Console.WriteLine("Incrementing V1 to evaluate the While-Loop: {0}", value1);
+                    value1++;
+                }
+            }
+
+            Console.WriteLine("----------------------BreakPoint-------------------------");
+
+            for (int cnt = 0; cnt < 5; cnt++)
+            {
+                Console.WriteLine("Displaying Counter: {0}", cnt);
+
+                if (baseNum < -9) {
+                
+                    baseNum ++;
+                    Console.WriteLine($"Incrementing the baseNum to test For-Loop Only: {baseNum}");
+                    
+                }
+            }
 
 
             Console.WriteLine("-----------------------------------------------");
